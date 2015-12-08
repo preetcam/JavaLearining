@@ -1,0 +1,30 @@
+package com.test.prep;
+
+
+import java.math.BigDecimal;
+/**
+ * Add two double values precisely
+ */
+public class BigDecimal1 {
+
+    public static void main(String[] args) {
+
+        Double d1=12.0012d;
+        Double doubleSum= d1+d1+d1;
+
+        System.out.println("Double Sum is "+doubleSum); // May give incorrect value as its of Double data type and the value is not precise
+
+        //To fix the above issue, you need to
+        // a: Convert the Double number to String
+        // b: Use BigDecimal class for addition
+        // c: Convert the result to be printed to .toString
+
+        String s1=Double.toString(d1);
+        System.out.println("String "+s1);
+
+        BigDecimal bd=new BigDecimal(s1);
+        BigDecimal sum= bd.add(bd).add(bd);
+        System.out.println("Bd result"+bd.toString());
+        
+    }
+}
